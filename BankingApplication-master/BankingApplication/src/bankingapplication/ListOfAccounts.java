@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ListOfAccounts {
     
-    private ArrayList<Account> accountList;
+    private final ArrayList<Account> accountList;
     private Account selected;
     private boolean checkingMode;
     private boolean savingsMode;
