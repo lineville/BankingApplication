@@ -328,6 +328,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="selectField">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="ff" red="99" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Select account name here"/>
           </Properties>
           <Events>
@@ -336,6 +339,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="deleteField">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Delete account here"/>
           </Properties>
           <Events>
@@ -344,6 +350,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="initNameField">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="99" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Enter new  account name"/>
           </Properties>
           <Events>
@@ -386,6 +395,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="initBalanceField">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Enter initial balance"/>
           </Properties>
           <Events>
@@ -497,8 +509,18 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="withdrawField">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="cc" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="depositField">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="66" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="withdrawButton">
           <Properties>
@@ -523,8 +545,27 @@
           </AuxValues>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="selectedAccountNameField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                <EtchetBorder/>
+              </Border>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="selectedAccountBalanceField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                <EtchetBorder/>
+              </Border>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

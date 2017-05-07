@@ -181,6 +181,7 @@ public class BankAppFrame extends javax.swing.JFrame {
         manageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         manageLabel.setText("Manage Accounts");
 
+        selectField.setBackground(new java.awt.Color(153, 255, 153));
         selectField.setText("Select account name here");
         selectField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -188,6 +189,7 @@ public class BankAppFrame extends javax.swing.JFrame {
             }
         });
 
+        deleteField.setBackground(new java.awt.Color(255, 102, 102));
         deleteField.setText("Delete account here");
         deleteField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -195,6 +197,7 @@ public class BankAppFrame extends javax.swing.JFrame {
             }
         });
 
+        initNameField.setBackground(new java.awt.Color(153, 255, 255));
         initNameField.setText("Enter new  account name");
         initNameField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -226,6 +229,7 @@ public class BankAppFrame extends javax.swing.JFrame {
             }
         });
 
+        initBalanceField.setBackground(new java.awt.Color(255, 255, 153));
         initBalanceField.setText("Enter initial balance");
         initBalanceField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -305,6 +309,10 @@ public class BankAppFrame extends javax.swing.JFrame {
         accountBalanceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         accountBalanceLabel.setText("Balance");
 
+        withdrawField.setBackground(new java.awt.Color(255, 204, 102));
+
+        depositField.setBackground(new java.awt.Color(255, 102, 255));
+
         withdrawButton.setBackground(Color.ORANGE);
         withdrawButton.setText("Withdraw");
         withdrawButton.addActionListener(new java.awt.event.ActionListener() {
@@ -320,6 +328,13 @@ public class BankAppFrame extends javax.swing.JFrame {
                 depositButtonActionPerformed(evt);
             }
         });
+
+        selectedAccountNameField.setEditable(false);
+        selectedAccountNameField.setBackground(new java.awt.Color(255, 255, 255));
+        selectedAccountNameField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        selectedAccountBalanceField.setEditable(false);
+        selectedAccountBalanceField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout selectedAccountPanelLayout = new javax.swing.GroupLayout(selectedAccountPanel);
         selectedAccountPanel.setLayout(selectedAccountPanelLayout);

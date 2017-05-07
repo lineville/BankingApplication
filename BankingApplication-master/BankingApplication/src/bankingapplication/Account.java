@@ -99,7 +99,7 @@ public class Account {
     }
     
     public String cashString(){
-        return "$ " + balance;
+        return "$ " + balance + "0";
     }
     
 }
