@@ -5,8 +5,9 @@
  */
 package bankingapplication;
 
-import javax.swing.JTextArea;
+
 import java.awt.Color;
+
 
 /**
  *
@@ -40,13 +41,13 @@ public class BankAppFrame extends javax.swing.JFrame {
         listLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         //Create several checking and savings accounts         CheckingAccount check = new CheckingAccount("Checking", 100000);         CheckingAccount spending = new CheckingAccount("Spending Money", 123423.20);         CheckingAccount groceries = new CheckingAccount("Grocery Fund", 1000);         CheckingAccount holiday = new CheckingAccount("Holiday Fund", 7823432.90);         SavingsAccount college = new SavingsAccount("College Savings", 80903.35);         SavingsAccount mortgage = new SavingsAccount("Mortgage Savings", 1234);         SavingsAccount business = new SavingsAccount("Business Savings", 8934.90);         SavingsAccount insurance = new SavingsAccount("insurance Savings", 8032423);          ListOfAccounts listy = new ListOfAccounts();         //Populate the list         listy.addAccount(check);         listy.addAccount(spending);         listy.addAccount(groceries);         listy.addAccount(holiday);         listy.addAccount(college);         listy.addAccount(mortgage);         listy.addAccount(business);         listy.addAccount(insurance);
-        listDisplay = new javax.swing.JTextArea();
+        nameListDisplay = new javax.swing.JTextArea();
         displayCheckingAccounts = new javax.swing.JButton();
         displaySavingsAccounts = new javax.swing.JButton();
         displayAllAccounts = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         //Create several checking and savings accounts         CheckingAccount check = new CheckingAccount("Checking", 100000);         CheckingAccount spending = new CheckingAccount("Spending Money", 123423.20);         CheckingAccount groceries = new CheckingAccount("Grocery Fund", 1000);         CheckingAccount holiday = new CheckingAccount("Holiday Fund", 7823432.90);         SavingsAccount college = new SavingsAccount("College Savings", 80903.35);         SavingsAccount mortgage = new SavingsAccount("Mortgage Savings", 1234);         SavingsAccount business = new SavingsAccount("Business Savings", 8934.90);         SavingsAccount insurance = new SavingsAccount("insurance Savings", 8032423);          ListOfAccounts listy = new ListOfAccounts();         //Populate the list         listy.addAccount(check);         listy.addAccount(spending);         listy.addAccount(groceries);         listy.addAccount(holiday);         listy.addAccount(college);         listy.addAccount(mortgage);         listy.addAccount(business);         listy.addAccount(insurance);
-        listDisplay2 = new javax.swing.JTextArea();
+        balanceDisplay = new javax.swing.JTextArea();
         managePanel = new javax.swing.JPanel();
         manageLabel = new javax.swing.JLabel();
         selectField = new javax.swing.JTextField();
@@ -101,11 +102,11 @@ public class BankAppFrame extends javax.swing.JFrame {
         listLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         listLabel.setText("Account List");
 
-        listDisplay.setEditable(false);
-        listDisplay.setColumns(10);
-        listDisplay.setRows(5);
-        listDisplay.setAutoscrolls(false);
-        jScrollPane2.setViewportView(listDisplay);
+        nameListDisplay.setEditable(false);
+        nameListDisplay.setColumns(10);
+        nameListDisplay.setRows(5);
+        nameListDisplay.setAutoscrolls(false);
+        jScrollPane2.setViewportView(nameListDisplay);
 
         displayCheckingAccounts.setBackground(Color.CYAN);
         displayCheckingAccounts.setText("Show Checking");
@@ -131,11 +132,11 @@ public class BankAppFrame extends javax.swing.JFrame {
             }
         });
 
-        listDisplay2.setEditable(false);
-        listDisplay2.setColumns(10);
-        listDisplay2.setRows(5);
-        listDisplay2.setAutoscrolls(false);
-        jScrollPane3.setViewportView(listDisplay2);
+        balanceDisplay.setEditable(false);
+        balanceDisplay.setColumns(10);
+        balanceDisplay.setRows(5);
+        balanceDisplay.setAutoscrolls(false);
+        jScrollPane3.setViewportView(balanceDisplay);
 
         javax.swing.GroupLayout listPanelLayout = new javax.swing.GroupLayout(listPanel);
         listPanel.setLayout(listPanelLayout);
@@ -475,13 +476,13 @@ public class BankAppFrame extends javax.swing.JFrame {
         CheckingAccount c = new CheckingAccount(inputName, inputBal);
         list.addAccount(c);
         if(list.isAllMode()){
-            listDisplay.append(c.getCheckingAccountName());
-            listDisplay2.append(c.cashString());
+            nameListDisplay.append(c.getCheckingAccountName());
+            balanceDisplay.append(c.cashString());
             displayAllAccounts.doClick();
         }
         else if(list.isCheckingMode()){
-            listDisplay.append(c.getCheckingAccountName());
-            listDisplay2.append(c.cashString());
+            nameListDisplay.append(c.getCheckingAccountName());
+            balanceDisplay.append(c.cashString());
             displayCheckingAccounts.doClick();
         }
     }//GEN-LAST:event_addCheckingActionPerformed
@@ -514,8 +515,8 @@ public class BankAppFrame extends javax.swing.JFrame {
         list.checkingModeOn();
         list.savingsModeOff();
         list.allModeOff();
-        listDisplay.setText(list.getCheckingAccounts().nameToString());
-        listDisplay2.setText(list.getCheckingAccounts().balsToString());
+        nameListDisplay.setText(list.getCheckingAccounts().nameToString());
+        balanceDisplay.setText(list.getCheckingAccounts().balsToString());
     }//GEN-LAST:event_displayCheckingAccountsActionPerformed
 
     /**
@@ -528,13 +529,13 @@ public class BankAppFrame extends javax.swing.JFrame {
         SavingsAccount c = new SavingsAccount(inputName, inputBal);
         list.addAccount(c);
         if(list.isAllMode()){
-            listDisplay.append(c.getSavingsAccountName());
-            listDisplay2.append(c.cashString());
+            nameListDisplay.append(c.getSavingsAccountName());
+            balanceDisplay.append(c.cashString());
             displayAllAccounts.doClick();
         }
         else if(list.isSavingsMode()){
-            listDisplay.append(c.getSavingsAccountName());
-            listDisplay2.append(c.cashString());
+            nameListDisplay.append(c.getSavingsAccountName());
+            balanceDisplay.append(c.cashString());
             displaySavingsAccounts.doClick();
         }
         
@@ -548,8 +549,8 @@ public class BankAppFrame extends javax.swing.JFrame {
         list.savingsModeOn();
         list.checkingModeOff();
         list.allModeOff();
-        listDisplay.setText(list.getSavingsAccounts().nameToString());
-        listDisplay2.setText(list.getSavingsAccounts().balsToString());
+        nameListDisplay.setText(list.getSavingsAccounts().nameToString());
+        balanceDisplay.setText(list.getSavingsAccounts().balsToString());
     }//GEN-LAST:event_displaySavingsAccountsActionPerformed
 
     /**
@@ -560,8 +561,8 @@ public class BankAppFrame extends javax.swing.JFrame {
         list.allModeOn();
         list.checkingModeOff();
         list.savingsModeOff();
-        listDisplay.setText(list.nameToString());
-        listDisplay2.setText(list.balsToString());
+        nameListDisplay.setText(list.nameToString());
+        balanceDisplay.setText(list.balsToString());
     }//GEN-LAST:event_displayAllAccountsActionPerformed
 
     private void initNameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_initNameFieldMouseClicked
@@ -619,6 +620,7 @@ public class BankAppFrame extends javax.swing.JFrame {
     private javax.swing.JLabel accountNameLabel;
     private javax.swing.JButton addChecking;
     private javax.swing.JButton addSavings;
+    private javax.swing.JTextArea balanceDisplay;
     private javax.swing.JButton deleteButton;
     private javax.swing.JTextField deleteField;
     private javax.swing.JButton depositButton;
@@ -630,12 +632,11 @@ public class BankAppFrame extends javax.swing.JFrame {
     private javax.swing.JTextField initNameField;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea listDisplay;
-    private javax.swing.JTextArea listDisplay2;
     private javax.swing.JLabel listLabel;
     private javax.swing.JPanel listPanel;
     private javax.swing.JLabel manageLabel;
     private javax.swing.JPanel managePanel;
+    private javax.swing.JTextArea nameListDisplay;
     private javax.swing.JButton selectButton;
     private javax.swing.JTextField selectField;
     private javax.swing.JFormattedTextField selectedAccountBalanceField;
