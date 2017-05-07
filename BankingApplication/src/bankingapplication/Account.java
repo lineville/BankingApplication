@@ -4,8 +4,7 @@ package bankingapplication;
 
 public class Account {
     
-    //This is a test at 10:52
-    //...//
+    
     private final String accountName;
     private double balance;
     protected double fee;
