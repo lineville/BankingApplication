@@ -150,16 +150,6 @@ public class ListOfAccountsTest {
     }
 
     /**
-     * Test of toString method, of class ListOfAccounts.
-     */
-    @Ignore
-    @Test
-    public void testToString() {
-        System.out.println("toString");
-        // Tested visually. Method works
-    }
-
-    /**
      * Test of savingsModeOn method, of class ListOfAccounts.
      */
     @Test
@@ -274,6 +264,38 @@ public class ListOfAccountsTest {
         instance.allModeOff();
         boolean result2 = instance.isAllMode();
         assertFalse(result2);
+    }
+
+    /**
+     * Test of nameToString method, of class ListOfAccounts.
+     */
+    @Test
+    public void testNameToString() {
+        System.out.println("nameToString");
+        ListOfAccounts instance = new ListOfAccounts();
+        Account a = new Account("Liam", 30.0, "Checking");
+        Account b = new Account("Tom", 30.0, "Checking");
+        instance.addAccount(a);
+        instance.addAccount(b);
+        String expResult = "ACCOUNT NAME \n" + "Liam\n" + "Tom\n";
+        String result = instance.nameToString();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of balsToString method, of class ListOfAccounts.
+     */
+    @Test
+    public void testBalsToString() {
+        System.out.println("balsToString");
+        ListOfAccounts instance = new ListOfAccounts();
+        Account a = new Account("Liam", 30.0, "Checking");
+        Account b = new Account("Tom", 30.0, "Checking");
+        instance.addAccount(a);
+        instance.addAccount(b);
+        String expResult = "BALANCE \n" + "$ 30.00\n" + "$ 30.00\n";
+        String result = instance.balsToString();
+        assertEquals(expResult, result);
     }
     
 }
