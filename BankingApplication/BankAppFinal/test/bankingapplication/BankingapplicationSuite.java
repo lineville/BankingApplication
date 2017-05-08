@@ -17,7 +17,7 @@ import org.junit.runners.Suite;
  * @author owner
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({bankingapplication.CheckingAccountTest.class, bankingapplication.BankingApplicationTest.class, bankingapplication.ListOfAccountsTest.class, bankingapplication.SavingsAccountTest.class, bankingapplication.AccountTest.class, bankingapplication.BankAppFrameTest.class})
+@Suite.SuiteClasses({AccountTest.class, BankAppFrameTest.class, ListOfAccountsTest.class, CheckingAccountTest.class, BankingApplicationTest.class, SavingsAccountTest.class})
 public class BankingapplicationSuite {
 
     @BeforeClass

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ListOfAccounts {
     
-    private ArrayList<Account> accountList;
+    private final ArrayList<Account> accountList;
     private Account selected;
     private boolean checkingMode;
     private boolean savingsMode;
@@ -85,7 +85,7 @@ public class ListOfAccounts {
     public ListOfAccounts getCheckingAccounts(){
         ListOfAccounts checking = new ListOfAccounts();
         for(Account a: accountList){
-            if(a.getClass().equals(CheckingAccount.class)){
+            if(a.isChecking()){
                 checking.addAccount(a);
             }
                 
@@ -100,7 +100,7 @@ public class ListOfAccounts {
     public ListOfAccounts getSavingsAccounts(){
         ListOfAccounts savings = new ListOfAccounts();
         for(Account a: accountList){
-            if(a.getClass().equals(SavingsAccount.class)){
+            if(a.isSavings()){
                 savings.addAccount(a);
             }
                
@@ -180,11 +180,18 @@ public class ListOfAccounts {
      * Converts the list to a string
      * @return 
      */
-    @Override
-    public String toString(){
-        String result = "Account Name       Balance \n".toUpperCase();
+    public String nameToString(){
+        String result = "Account Name \n".toUpperCase();
         for(Account a: accountList){
-            result += a.toString();
+            result += a.getAccountName() + "\n";
+        }
+        return result;
+    }
+    
+    public String balsToString(){
+        String result = "Balance \n".toUpperCase();
+        for(Account a: accountList){
+            result += a.cashString() + "\n";
         }
         return result;
     }

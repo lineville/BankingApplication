@@ -39,18 +39,7 @@ public class BankAppFrameTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of getDisplay method, of class BankAppFrame.
-     */
-    @Ignore
-    @Test
-    public void testGetDisplay() {
-        System.out.println("getDisplay");
-        BankAppFrame instance = null;
-        JTextArea expResult = null;
-        JTextArea result = instance.getDisplay();
-        assertEquals(expResult, result);
-    }
+  
 
     /**
      * Test of main method, of class BankAppFrame.

@@ -23,11 +23,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-              <Component id="titlePanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="listPanel" min="-2" max="-2" attributes="0"/>
@@ -37,6 +32,11 @@
                   <Component id="selectedAccountPanel" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <Component id="titlePanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -71,9 +71,10 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Component id="titleLabel" min="-2" pref="401" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="142" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="77" max="32767" attributes="0"/>
+                  <Component id="titleLabel" min="-2" pref="602" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -112,19 +113,23 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="displayAllAccounts" max="32767" attributes="0"/>
                       <Component id="listLabel" max="32767" attributes="0"/>
-                      <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="displayCheckingAccounts" min="-2" pref="126" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="displaySavingsAccounts" max="32767" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jScrollPane2" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane3" min="-2" pref="126" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -141,7 +146,10 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="displayAllAccounts" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane2" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" max="32767" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -164,11 +172,12 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="listDisplay">
+            <Component class="javax.swing.JTextArea" name="nameListDisplay">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="columns" type="int" value="20"/>
+                <Property name="columns" type="int" value="10"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="autoscrolls" type="boolean" value="false"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="//Create several checking and savings accounts         CheckingAccount check = new CheckingAccount(&quot;Checking&quot;, 100000);         CheckingAccount spending = new CheckingAccount(&quot;Spending Money&quot;, 123423.20);         CheckingAccount groceries = new CheckingAccount(&quot;Grocery Fund&quot;, 1000);         CheckingAccount holiday = new CheckingAccount(&quot;Holiday Fund&quot;, 7823432.90);         SavingsAccount college = new SavingsAccount(&quot;College Savings&quot;, 80903.35);         SavingsAccount mortgage = new SavingsAccount(&quot;Mortgage Savings&quot;, 1234);         SavingsAccount business = new SavingsAccount(&quot;Business Savings&quot;, 8934.90);         SavingsAccount insurance = new SavingsAccount(&quot;insurance Savings&quot;, 8032423);          ListOfAccounts listy = new ListOfAccounts();         //Populate the list         listy.addAccount(check);         listy.addAccount(spending);         listy.addAccount(groceries);         listy.addAccount(holiday);         listy.addAccount(college);         listy.addAccount(mortgage);         listy.addAccount(business);         listy.addAccount(insurance);"/>
@@ -209,6 +218,26 @@
             <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="displayAllAccounts.setBackground(Color.LIGHT_GRAY);&#xa;"/>
           </AuxValues>
         </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="balanceDisplay">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="columns" type="int" value="10"/>
+                <Property name="rows" type="int" value="5"/>
+                <Property name="autoscrolls" type="boolean" value="false"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="//Create several checking and savings accounts         CheckingAccount check = new CheckingAccount(&quot;Checking&quot;, 100000);         CheckingAccount spending = new CheckingAccount(&quot;Spending Money&quot;, 123423.20);         CheckingAccount groceries = new CheckingAccount(&quot;Grocery Fund&quot;, 1000);         CheckingAccount holiday = new CheckingAccount(&quot;Holiday Fund&quot;, 7823432.90);         SavingsAccount college = new SavingsAccount(&quot;College Savings&quot;, 80903.35);         SavingsAccount mortgage = new SavingsAccount(&quot;Mortgage Savings&quot;, 1234);         SavingsAccount business = new SavingsAccount(&quot;Business Savings&quot;, 8934.90);         SavingsAccount insurance = new SavingsAccount(&quot;insurance Savings&quot;, 8032423);          ListOfAccounts listy = new ListOfAccounts();         //Populate the list         listy.addAccount(check);         listy.addAccount(spending);         listy.addAccount(groceries);         listy.addAccount(holiday);         listy.addAccount(college);         listy.addAccount(mortgage);         listy.addAccount(business);         listy.addAccount(insurance);"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="managePanel">
@@ -243,7 +272,7 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="initNameField" max="32767" attributes="0"/>
+                              <Component id="initNameField" pref="318" max="32767" attributes="0"/>
                               <Component id="addChecking" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -299,6 +328,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="selectField">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="ff" red="99" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Select account name here"/>
           </Properties>
           <Events>
@@ -307,6 +339,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="deleteField">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Delete account here"/>
           </Properties>
           <Events>
@@ -315,6 +350,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="initNameField">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="99" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Enter new  account name"/>
           </Properties>
           <Events>
@@ -357,6 +395,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="initBalanceField">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Enter initial balance"/>
           </Properties>
           <Events>
@@ -468,8 +509,18 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="withdrawField">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="cc" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="depositField">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="66" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="withdrawButton">
           <Properties>
@@ -494,8 +545,27 @@
           </AuxValues>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="selectedAccountNameField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                <EtchetBorder/>
+              </Border>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="selectedAccountBalanceField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                <EtchetBorder/>
+              </Border>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

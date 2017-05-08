@@ -5,8 +5,9 @@
  */
 package bankingapplication;
 
-import javax.swing.JTextArea;
+
 import java.awt.Color;
+
 
 /**
  *
@@ -40,10 +41,13 @@ public class BankAppFrame extends javax.swing.JFrame {
         listLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         //Create several checking and savings accounts         CheckingAccount check = new CheckingAccount("Checking", 100000);         CheckingAccount spending = new CheckingAccount("Spending Money", 123423.20);         CheckingAccount groceries = new CheckingAccount("Grocery Fund", 1000);         CheckingAccount holiday = new CheckingAccount("Holiday Fund", 7823432.90);         SavingsAccount college = new SavingsAccount("College Savings", 80903.35);         SavingsAccount mortgage = new SavingsAccount("Mortgage Savings", 1234);         SavingsAccount business = new SavingsAccount("Business Savings", 8934.90);         SavingsAccount insurance = new SavingsAccount("insurance Savings", 8032423);          ListOfAccounts listy = new ListOfAccounts();         //Populate the list         listy.addAccount(check);         listy.addAccount(spending);         listy.addAccount(groceries);         listy.addAccount(holiday);         listy.addAccount(college);         listy.addAccount(mortgage);         listy.addAccount(business);         listy.addAccount(insurance);
-        listDisplay = new javax.swing.JTextArea();
+        nameListDisplay = new javax.swing.JTextArea();
         displayCheckingAccounts = new javax.swing.JButton();
         displaySavingsAccounts = new javax.swing.JButton();
         displayAllAccounts = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        //Create several checking and savings accounts         CheckingAccount check = new CheckingAccount("Checking", 100000);         CheckingAccount spending = new CheckingAccount("Spending Money", 123423.20);         CheckingAccount groceries = new CheckingAccount("Grocery Fund", 1000);         CheckingAccount holiday = new CheckingAccount("Holiday Fund", 7823432.90);         SavingsAccount college = new SavingsAccount("College Savings", 80903.35);         SavingsAccount mortgage = new SavingsAccount("Mortgage Savings", 1234);         SavingsAccount business = new SavingsAccount("Business Savings", 8934.90);         SavingsAccount insurance = new SavingsAccount("insurance Savings", 8032423);          ListOfAccounts listy = new ListOfAccounts();         //Populate the list         listy.addAccount(check);         listy.addAccount(spending);         listy.addAccount(groceries);         listy.addAccount(holiday);         listy.addAccount(college);         listy.addAccount(mortgage);         listy.addAccount(business);         listy.addAccount(insurance);
+        balanceDisplay = new javax.swing.JTextArea();
         managePanel = new javax.swing.JPanel();
         manageLabel = new javax.swing.JLabel();
         selectField = new javax.swing.JTextField();
@@ -79,9 +83,10 @@ public class BankAppFrame extends javax.swing.JFrame {
         titlePanel.setLayout(titlePanelLayout);
         titlePanelLayout.setHorizontalGroup(
             titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(titlePanelLayout.createSequentialGroup()
-                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 142, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, titlePanelLayout.createSequentialGroup()
+                .addContainerGap(77, Short.MAX_VALUE)
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
         titlePanelLayout.setVerticalGroup(
             titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,10 +102,11 @@ public class BankAppFrame extends javax.swing.JFrame {
         listLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         listLabel.setText("Account List");
 
-        listDisplay.setEditable(false);
-        listDisplay.setColumns(20);
-        listDisplay.setRows(5);
-        jScrollPane2.setViewportView(listDisplay);
+        nameListDisplay.setEditable(false);
+        nameListDisplay.setColumns(10);
+        nameListDisplay.setRows(5);
+        nameListDisplay.setAutoscrolls(false);
+        jScrollPane2.setViewportView(nameListDisplay);
 
         displayCheckingAccounts.setBackground(Color.CYAN);
         displayCheckingAccounts.setText("Show Checking");
@@ -126,6 +132,12 @@ public class BankAppFrame extends javax.swing.JFrame {
             }
         });
 
+        balanceDisplay.setEditable(false);
+        balanceDisplay.setColumns(10);
+        balanceDisplay.setRows(5);
+        balanceDisplay.setAutoscrolls(false);
+        jScrollPane3.setViewportView(balanceDisplay);
+
         javax.swing.GroupLayout listPanelLayout = new javax.swing.GroupLayout(listPanel);
         listPanel.setLayout(listPanelLayout);
         listPanelLayout.setHorizontalGroup(
@@ -135,11 +147,14 @@ public class BankAppFrame extends javax.swing.JFrame {
                 .addGroup(listPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(displayAllAccounts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(listLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2)
                     .addGroup(listPanelLayout.createSequentialGroup()
                         .addComponent(displayCheckingAccounts, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(displaySavingsAccounts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(displaySavingsAccounts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, listPanelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         listPanelLayout.setVerticalGroup(
@@ -154,7 +169,9 @@ public class BankAppFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(displayAllAccounts)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2)
+                .addGroup(listPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane3))
                 .addContainerGap())
         );
 
@@ -164,6 +181,7 @@ public class BankAppFrame extends javax.swing.JFrame {
         manageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         manageLabel.setText("Manage Accounts");
 
+        selectField.setBackground(new java.awt.Color(153, 255, 153));
         selectField.setText("Select account name here");
         selectField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -171,6 +189,7 @@ public class BankAppFrame extends javax.swing.JFrame {
             }
         });
 
+        deleteField.setBackground(new java.awt.Color(255, 102, 102));
         deleteField.setText("Delete account here");
         deleteField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -178,6 +197,7 @@ public class BankAppFrame extends javax.swing.JFrame {
             }
         });
 
+        initNameField.setBackground(new java.awt.Color(153, 255, 255));
         initNameField.setText("Enter new  account name");
         initNameField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -209,6 +229,7 @@ public class BankAppFrame extends javax.swing.JFrame {
             }
         });
 
+        initBalanceField.setBackground(new java.awt.Color(255, 255, 153));
         initBalanceField.setText("Enter initial balance");
         initBalanceField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -244,7 +265,7 @@ public class BankAppFrame extends javax.swing.JFrame {
                             .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(managePanelLayout.createSequentialGroup()
                         .addGroup(managePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(initNameField)
+                            .addComponent(initNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
                             .addComponent(addChecking, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(managePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -288,6 +309,10 @@ public class BankAppFrame extends javax.swing.JFrame {
         accountBalanceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         accountBalanceLabel.setText("Balance");
 
+        withdrawField.setBackground(new java.awt.Color(255, 204, 102));
+
+        depositField.setBackground(new java.awt.Color(255, 102, 255));
+
         withdrawButton.setBackground(Color.ORANGE);
         withdrawButton.setText("Withdraw");
         withdrawButton.addActionListener(new java.awt.event.ActionListener() {
@@ -303,6 +328,13 @@ public class BankAppFrame extends javax.swing.JFrame {
                 depositButtonActionPerformed(evt);
             }
         });
+
+        selectedAccountNameField.setEditable(false);
+        selectedAccountNameField.setBackground(new java.awt.Color(255, 255, 255));
+        selectedAccountNameField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        selectedAccountBalanceField.setEditable(false);
+        selectedAccountBalanceField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout selectedAccountPanelLayout = new javax.swing.GroupLayout(selectedAccountPanel);
         selectedAccountPanel.setLayout(selectedAccountPanelLayout);
@@ -356,10 +388,6 @@ public class BankAppFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(listPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -368,6 +396,10 @@ public class BankAppFrame extends javax.swing.JFrame {
                     .addComponent(managePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(selectedAccountPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -459,11 +491,13 @@ public class BankAppFrame extends javax.swing.JFrame {
         CheckingAccount c = new CheckingAccount(inputName, inputBal);
         list.addAccount(c);
         if(list.isAllMode()){
-            listDisplay.append(c.toString());
+            nameListDisplay.append(c.getCheckingAccountName());
+            balanceDisplay.append(c.cashString());
             displayAllAccounts.doClick();
         }
         else if(list.isCheckingMode()){
-            listDisplay.append(c.toString());
+            nameListDisplay.append(c.getCheckingAccountName());
+            balanceDisplay.append(c.cashString());
             displayCheckingAccounts.doClick();
         }
     }//GEN-LAST:event_addCheckingActionPerformed
@@ -496,7 +530,8 @@ public class BankAppFrame extends javax.swing.JFrame {
         list.checkingModeOn();
         list.savingsModeOff();
         list.allModeOff();
-        listDisplay.setText(list.getCheckingAccounts().toString());
+        nameListDisplay.setText(list.getCheckingAccounts().nameToString());
+        balanceDisplay.setText(list.getCheckingAccounts().balsToString());
     }//GEN-LAST:event_displayCheckingAccountsActionPerformed
 
     /**
@@ -509,11 +544,13 @@ public class BankAppFrame extends javax.swing.JFrame {
         SavingsAccount c = new SavingsAccount(inputName, inputBal);
         list.addAccount(c);
         if(list.isAllMode()){
-            listDisplay.append(c.toString());
+            nameListDisplay.append(c.getSavingsAccountName());
+            balanceDisplay.append(c.cashString());
             displayAllAccounts.doClick();
         }
         else if(list.isSavingsMode()){
-            listDisplay.append(c.toString());
+            nameListDisplay.append(c.getSavingsAccountName());
+            balanceDisplay.append(c.cashString());
             displaySavingsAccounts.doClick();
         }
         
@@ -527,7 +564,8 @@ public class BankAppFrame extends javax.swing.JFrame {
         list.savingsModeOn();
         list.checkingModeOff();
         list.allModeOff();
-        listDisplay.setText(list.getSavingsAccounts().toString());
+        nameListDisplay.setText(list.getSavingsAccounts().nameToString());
+        balanceDisplay.setText(list.getSavingsAccounts().balsToString());
     }//GEN-LAST:event_displaySavingsAccountsActionPerformed
 
     /**
@@ -538,7 +576,8 @@ public class BankAppFrame extends javax.swing.JFrame {
         list.allModeOn();
         list.checkingModeOff();
         list.savingsModeOff();
-        listDisplay.setText(list.toString());
+        nameListDisplay.setText(list.nameToString());
+        balanceDisplay.setText(list.balsToString());
     }//GEN-LAST:event_displayAllAccountsActionPerformed
 
     private void initNameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_initNameFieldMouseClicked
@@ -557,13 +596,6 @@ public class BankAppFrame extends javax.swing.JFrame {
         selectField.setText("");
     }//GEN-LAST:event_selectFieldMouseClicked
 
-    /**
-     * Gets the display
-     * @return listDisplay
-     */
-    public JTextArea getDisplay(){
-        return listDisplay;
-    }
     /**
      * @param args the command line arguments
      */
@@ -603,6 +635,7 @@ public class BankAppFrame extends javax.swing.JFrame {
     private javax.swing.JLabel accountNameLabel;
     private javax.swing.JButton addChecking;
     private javax.swing.JButton addSavings;
+    private javax.swing.JTextArea balanceDisplay;
     private javax.swing.JButton deleteButton;
     private javax.swing.JTextField deleteField;
     private javax.swing.JButton depositButton;
@@ -613,11 +646,12 @@ public class BankAppFrame extends javax.swing.JFrame {
     private javax.swing.JTextField initBalanceField;
     private javax.swing.JTextField initNameField;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea listDisplay;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel listLabel;
     private javax.swing.JPanel listPanel;
     private javax.swing.JLabel manageLabel;
     private javax.swing.JPanel managePanel;
+    private javax.swing.JTextArea nameListDisplay;
     private javax.swing.JButton selectButton;
     private javax.swing.JTextField selectField;
     private javax.swing.JFormattedTextField selectedAccountBalanceField;

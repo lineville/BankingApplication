@@ -115,17 +115,6 @@ public class AccountTest {
         assertTrue(result);
     }
 
-    /**
-     * Test of toString method, of class Account.
-     */
-    @Test
-    public void testToString() {
-        System.out.println("toString");
-        Account instance = new Account("Liam", 30.0, "Checking");
-        String expResult = "Liam .......... $30.0\n";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-    }
 
     /**
      * Test of getType method, of class Account.
@@ -170,6 +159,18 @@ public class AccountTest {
         boolean result2 = instance2.isSavings();
         assertEquals(expResult, result);
         assertFalse(result2);
+    }
+
+    /**
+     * Test of cashString method, of class Account.
+     */
+    @Test
+    public void testCashString() {
+        System.out.println("cashString");
+        Account instance = new Account("Liam", 30.0, "Checking");
+        String expResult = "$ 30.00";
+        String result = instance.cashString();
+        assertEquals(expResult, result);
     }
     
 }

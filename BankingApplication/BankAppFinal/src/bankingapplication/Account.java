@@ -4,6 +4,13 @@ package bankingapplication;
 
 public class Account {
     
+    /**
+     * An account holds the name and balance of a single account
+     * It is either a checking or savings account and only one
+     * can be selected at a time. The fee depends on the type of the
+     * account. An account can be deposited to and withdrawn from.
+     * 
+     */
     
     private final String accountName;
     private double balance;
@@ -98,13 +105,8 @@ public class Account {
         return type.equals("Savings");
     }
     
-    /**
-     * Converts this account to a string
-     * @return string of account
-     */
-    @Override
-    public String toString(){
-        return accountName + " .........." + 
-                " $" + balance + "\n";
+    public String cashString(){
+        return "$ " + balance + "0";
     }
+    
 }
