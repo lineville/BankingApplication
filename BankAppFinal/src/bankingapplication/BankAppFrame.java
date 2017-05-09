@@ -510,6 +510,10 @@ public class BankAppFrame extends javax.swing.JFrame {
         String input = deleteField.getText();
         Account d = list.getAccount(input);
         list.deleteAccount(d);
+        if(d.isSelected()){
+            selectedAccountNameField.setText("");
+            selectedAccountBalanceField.setText("");
+        }
         deleteField.setText("");
         if(list.isAllMode()){
             displayAllAccounts.doClick();
@@ -520,6 +524,7 @@ public class BankAppFrame extends javax.swing.JFrame {
         if(list.isSavingsMode() && d.isSavings()){
             displaySavingsAccounts.doClick();
         }
+        
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     /**
@@ -581,18 +586,34 @@ public class BankAppFrame extends javax.swing.JFrame {
         balanceDisplay.setText(list.balsToString());
     }//GEN-LAST:event_displayAllAccountsActionPerformed
 
+    /**
+     * Sets the field to empty upon click
+     * @param evt 
+     */
     private void initNameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_initNameFieldMouseClicked
         initNameField.setText("");
     }//GEN-LAST:event_initNameFieldMouseClicked
 
+    /**
+     * Sets the field to empty upon click
+     * @param evt 
+     */
     private void initBalanceFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_initBalanceFieldMouseClicked
         initBalanceField.setText("");
     }//GEN-LAST:event_initBalanceFieldMouseClicked
 
+    /**
+     * Sets the field to empty upon click
+     * @param evt 
+     */
     private void deleteFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteFieldMouseClicked
         deleteField.setText("");
     }//GEN-LAST:event_deleteFieldMouseClicked
 
+    /**
+     * Sets the field to empty upon click
+     * @param evt 
+     */
     private void selectFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selectFieldMouseClicked
         selectField.setText("");
     }//GEN-LAST:event_selectFieldMouseClicked
